@@ -3,7 +3,7 @@ import cv2
 
 
 target_device = "S8+"
-
+# target_device = "iPadMini4"
 
 def order_points(pts):
     rect = numpy.zeros((4,2), dtype="float32")
@@ -75,6 +75,6 @@ with open("C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\
         newx, newy = (warped.shape[0] * 1600) / warped.shape[0], (warped.shape[1] * 1200) / warped.shape[1]
         warped_resize = cv2.resize(warped, (int(newx), int(newy)))
 
-        dest_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\img_" + no + "_trans.jpg"
+        dest_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\trans_img_" + no + ".jpg"
         cv2.imwrite(dest_path, warped_resize)
         print("Finish img_" + no)

@@ -3,6 +3,7 @@ import cv2
 
 region = 7
 target_device = "S8+"
+# target_device = "iPadMini4"
 
 data_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2"
 
@@ -29,7 +30,7 @@ def collect_pixel_data(tiny_crop, pixel_list):
     return pixel_list
 
 
-def plot_coordinate(img, edit_image, region, no):
+def plot_coordinate(img, edit_image, region):
     pixel_list = []
     centerX = 20
     centerY = 14
@@ -109,14 +110,12 @@ def write_file(file_name, the_list):
 
 no = 1
 for i in range(30):
-    if no == 3:
-        break
-    filename = data_path + "\\img_" + str(i+1) + "_trans.jpg"
+    filename = data_path + "\\trans_img_" + str(no) + ".jpg"
     print(filename)
     img = cv2.imread(filename)
     edit_image = img.copy()
 
-    device_pixel_list, edit_image = plot_coordinate(img, edit_image, region, no)
+    device_pixel_list, edit_image = plot_coordinate(img, edit_image, region)
 
     dest_path = data_path + "\\" + str(no) + ".jpg"
     cv2.imwrite(dest_path, edit_image)
