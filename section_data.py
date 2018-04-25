@@ -14,7 +14,7 @@ for i in range(10):
         section_file.write(".")
         for j in range(section_len):
             #print(i*section_len + j)
-            #break
+            #break;jk
             line = data_list[i*section_len + j]
             section_file.write(line)
     print("Finish " + str(i + 1))
