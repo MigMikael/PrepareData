@@ -4,9 +4,9 @@ label_device = "iPadMini4"
 feature_device = "S8+"
 
 base_path = "C:\\Users\\Mig\\Documents\\Thesis\\"
-label_data = base_path + label_device + "\\data_set_2\\data.txt"
-feature_data = base_path + feature_device + "\\data_set_2\\data.txt"
-output_data = "C:\\Users\\Mig\\Documents\\Thesis\\iPad_s8\\iPad_S8_data_1.txt"
+label_data = base_path + label_device + "\\data_set_3\\final-data.txt"
+feature_data = base_path + feature_device + "\\data_set_3\\final-data.txt"
+output_data = "C:\\Users\\Mig\\Documents\\Thesis\\iPad_s8\\iPad_S8_data_2.txt"
 
 label_file = open(label_data, "r")
 feature_file = open(feature_data, "r")

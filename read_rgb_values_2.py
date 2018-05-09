@@ -2,10 +2,11 @@ import cv2
 
 
 region = 7
-target_device = "S8+"
-# target_device = "iPadMini4"
+# target_device = "S8+"
+target_device = "iPadMini4"
 
-data_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\crop\\"
+# data_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\crop\\"
+data_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_3\\"
 
 
 def draw_rect(img, tl, tr, br, bl):
@@ -110,7 +111,7 @@ def write_file(file_name, the_list):
 
 for i in range(30):
     for j in range(4):
-        filename = data_path + "img_" + str(i + 1) + "-" + str(j + 1) + ".jpg"
+        filename = data_path + "trans_img_" + str(i + 1) + "_" + str(j + 1) + ".jpg"
 
         img = cv2.imread(filename)
         edit_image = img.copy()
@@ -123,5 +124,6 @@ for i in range(30):
         output_path = data_path + "data.txt"
         write_file(output_path, device_pixel_list)
         print("Finish " + filename)
+
 
 
