@@ -3,10 +3,11 @@ import cv2
 
 region = 7
 # target_device = "S8+"
-target_device = "iPadMini4"
+# target_device = "iPadMini4"
+target_device = "MotoC"
 
 # data_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\crop\\"
-data_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_3\\"
+data_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\"
 
 
 def draw_rect(img, tl, tr, br, bl):
@@ -50,7 +51,7 @@ def plot_coordinate(img, edit_image, region):
             if i <= 10:
                 indexX = indexX
             else:
-                indexX = indexX + (dist // 3)
+                indexX = indexX
 
             if i > 17:
                 indexX = indexX - 2

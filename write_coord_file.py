@@ -6,13 +6,14 @@
 """
 
 # target_device = "iPadMini4"
-target_device = "S8+"
+# target_device = "S8+"
+target_device = "MotoC"
 
-dest_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\"
+dest_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_2\\"
 
-with open(dest_path + "coord.txt", 'a') as txtfile:
+with open(dest_path + "coord3.txt", 'a') as txtfile:
     for i in range(30):
-        line = str(i+1) + "|,|,|,|,"
+        line = str(i+1) + "|,|,|,|,|,|,|,|,|,"
         if i != 29:
             line += "\n"
         txtfile.write(line)
