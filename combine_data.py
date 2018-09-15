@@ -1,12 +1,12 @@
 
 
-label_device = "S8+"
-feature_device = "MotoC"
+label_device = "iPadMini4"
+feature_device = "S8+"
 
 base_path = "D:\\Documents\\Thesis\\"
-label_data = base_path + label_device + "\\data_set_3\\data_clean.txt"
-feature_data = base_path + feature_device + "\\data_set_3\\data_clean.txt"
-output_data = "D:\\Documents\\Thesis\\S8_MotoC\\S8_MotoC_plus_data_3.txt"
+label_data = base_path + label_device + "\\data_set_3\\data_clean_33.txt"
+feature_data = base_path + feature_device + "\\data_set_3\\data_clean_33.txt"
+output_data = "D:\\Documents\\Thesis\\iPad_S8\\iPad_S8_plus_data_4.txt"
 
 label_file = open(label_data, "r")
 feature_file = open(feature_data, "r")

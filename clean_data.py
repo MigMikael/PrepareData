@@ -2,13 +2,13 @@ target_device1 = "iPadMini4"
 target_device2 = "MotoC"
 target_device3 = "S8+"
 
-data_path1 = "D:\\Documents\\Thesis\\" + target_device1 + "\\data_set_3\\data.txt"
-data_path2 = "D:\\Documents\\Thesis\\" + target_device2 + "\\data_set_3\\data.txt"
-data_path3 = "D:\\Documents\\Thesis\\" + target_device3 + "\\data_set_3\\data.txt"
+data_path1 = "D:\\Documents\\Thesis\\" + target_device1 + "\\data_set_3\\data_clean_32.txt"
+data_path2 = "D:\\Documents\\Thesis\\" + target_device2 + "\\data_set_3\\data_clean_32.txt"
+data_path3 = "D:\\Documents\\Thesis\\" + target_device3 + "\\data_set_3\\data_clean_32.txt"
 
-out_path1 = "D:\\Documents\\Thesis\\" + target_device1 + "\\data_set_3\\data_clean.txt"
-out_path2 = "D:\\Documents\\Thesis\\" + target_device2 + "\\data_set_3\\data_clean.txt"
-out_path3 = "D:\\Documents\\Thesis\\" + target_device3 + "\\data_set_3\\data_clean.txt"
+out_path1 = "D:\\Documents\\Thesis\\" + target_device1 + "\\data_set_3\\data_clean_33.txt"
+out_path2 = "D:\\Documents\\Thesis\\" + target_device2 + "\\data_set_3\\data_clean_33.txt"
+out_path3 = "D:\\Documents\\Thesis\\" + target_device3 + "\\data_set_3\\data_clean_33.txt"
 
 device_data1 = []
 device_data2 = []
@@ -48,6 +48,7 @@ for i in range(len_data):
     if abs(r1 - r2) > threshold or abs(r1 - r3) > threshold or abs(r2 - r3) > threshold:
         count += 1
         abnormal_idx.append(i)
+        #print("R = ", r1, r2, r3)
 
     if abs(g1 - g2) > threshold or abs(g1 - g3) > threshold or abs(g2 - g3) > threshold:
         count += 1
