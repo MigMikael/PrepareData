@@ -7,7 +7,8 @@
 
 # target_device = "iPadMini4"
 # target_device = "S8+"
-target_device = "MotoC"
+# target_device = "MotoC"
+target_device = "Mi5"
 
 dest_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_2\\"
 

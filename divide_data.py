@@ -3,9 +3,9 @@ from random import shuffle
 train_ratio = 80
 test_ratio = 20
 
-device_data = "D:\\Documents\\Thesis\\S8_MotoC\\S8_MotoC_plus_data_4.txt"
-output_train_data = "D:\\Documents\\Thesis\\S8_MotoC\\S8_MotoC_plus_train_data_4.txt"
-output_test_data = "D:\\Documents\\Thesis\\S8_MotoC\\S8_MotoC_plus_test_data_4.txt"
+device_data = "D:\\Documents\\Thesis\\Mi5_plus\\iPad_Mi5_plus_data_5.txt"
+output_train_data = "D:\\Documents\\Thesis\\Mi5_plus\\iPad_Mi5_plus_train_data_5.txt"
+output_test_data = "D:\\Documents\\Thesis\\Mi5_plus\\iPad_Mi5_plus_test_data_5.txt"
 
 data_file = open(device_data, "r")
 data_list = data_file.readlines()

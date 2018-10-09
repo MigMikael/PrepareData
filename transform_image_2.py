@@ -4,7 +4,8 @@ import cv2
 
 # target_device = "S8+"
 # target_device = "iPadMini4"
-target_device = "MotoC"
+# target_device = "MotoC"
+target_device = "Mi5"
 
 def order_points(pts):
     rect = numpy.zeros((4,2), dtype="float32")

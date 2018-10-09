@@ -4,8 +4,9 @@ import os
 
 
 # target_device = "S8+"
-#target_device = "iPadMini4"
-target_device = "MotoC"
+# target_device = "iPadMini4"
+# target_device = "MotoC"
+target_device = "Mi5"
 image_folder = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_2"
 
 count = 1
