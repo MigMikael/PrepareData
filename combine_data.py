@@ -6,7 +6,7 @@ feature_device = "Mi5"
 base_path = "D:\\Documents\\Thesis\\"
 label_data = base_path + label_device + "\\data_set_3\\data_centroid_2.txt"
 feature_data = base_path + feature_device + "\\data_set_3\\data_centroid_2.txt"
-output_data = "D:\\Documents\\Thesis\\Mi5_plus\\S8_Mi5_plus_data_5.txt"
+output_data = base_path + "\\Mi5_plus\\S8_Mi5_plus_data_5.txt"
 
 label_file = open(label_data, "r")
 feature_file = open(feature_data, "r")

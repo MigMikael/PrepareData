@@ -1,9 +1,10 @@
 import numpy
 import cv2
 
-
-target_device = "S8+"
 # target_device = "iPadMini4"
+# target_device = "MotoC"
+target_device = "S8+"
+
 
 def order_points(pts):
     rect = numpy.zeros((4,2), dtype="float32")
@@ -47,9 +48,10 @@ def four_point_transform(image, pts):
     return warped
 
 
-image_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\"
+image_path = "D:\\Documents\\Thesis\\" + target_device + "\\additional_img\\resize_img\\"
+dest_path = "D:\\Documents\\Thesis\\" + target_device + "\\additional_img\\crop_img\\"
 
-with open("C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\coord.txt", 'r') as coord_file:
+with open(dest_path + "coord.txt", 'r') as coord_file:
     for line in coord_file:
         no, point1, point2, point3, point4 = line.split('|')
         #print(no, point1, point2, point3, point4)
@@ -66,7 +68,7 @@ with open("C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\
         ])
         #print(rec)
 
-        source_path = image_path + "img_" + no + ".jpg"
+        source_path = image_path + "img" + no + ".jpg"
         #print(source_path)
 
         image = cv2.imread(source_path)
@@ -75,6 +77,7 @@ with open("C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\
         newx, newy = (warped.shape[0] * 1600) / warped.shape[0], (warped.shape[1] * 1200) / warped.shape[1]
         warped_resize = cv2.resize(warped, (int(newx), int(newy)))
 
-        dest_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\trans_img_" + no + ".jpg"
-        cv2.imwrite(dest_path, warped_resize)
+        #dest_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\trans_img_" + no + ".jpg"
+        img_name = dest_path + "trans_img_" + no + ".jpg"
+        cv2.imwrite(img_name, warped_resize)
         print("Finish img_" + no)

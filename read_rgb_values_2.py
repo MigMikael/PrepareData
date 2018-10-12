@@ -2,13 +2,16 @@ import cv2
 import math
 
 region = 7
+num_img = 10
 # target_device = "S8+"
-# target_device = "iPadMini4"
+target_device = "iPadMini4"
 # target_device = "MotoC"
-target_device = "Mi5"
+# target_device = "Mi5"
 
 # data_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\crop\\"
-data_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\"
+# data_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\"
+data_path = "D:\\Documents\\Thesis\\" + target_device + "\\random_color\\"
+dest_data_name = "iPad_random_2.txt"
 
 
 def draw_rect(img, tl, tr, br, bl):
@@ -158,7 +161,7 @@ def write_file(file_name, the_list):
     #print("wrote file")
 
 
-for i in range(30):
+for i in range(num_img):
     for j in range(4):
         filename = data_path + "trans_img_" + str(i + 1) + "_" + str(j + 1) + ".jpg"
 
@@ -170,7 +173,7 @@ for i in range(30):
         dest_path = data_path + str(i+1) + "-" + str(j+1) + ".jpg"
         cv2.imwrite(dest_path, edit_image)
 
-        output_path = data_path + "data_centroid_2.txt"
+        output_path = data_path + dest_data_name
         write_file(output_path, device_pixel_list)
         print("Finish " + filename)
 

@@ -3,9 +3,13 @@ import cv2
 
 
 # target_device = "S8+"
-# target_device = "iPadMini4"
+target_device = "iPadMini4"
 # target_device = "MotoC"
-target_device = "Mi5"
+# target_device = "Mi5"
+
+# image_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_2\\"
+image_path = "D:\\Documents\\Thesis\\" + target_device + "\\random_color\\"
+
 
 def order_points(pts):
     rect = numpy.zeros((4,2), dtype="float32")
@@ -49,9 +53,7 @@ def four_point_transform(image, pts):
     return warped
 
 
-image_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_2\\"
-
-with open("D:\\Documents\\Thesis\\" + target_device + "\\data_set_2\\coord3.txt", 'r') as coord_file:
+with open(image_path + "coord3.txt", 'r') as coord_file:
     for line in coord_file:
         no, point1, point2, point3, point4, a, b, c, d, e = line.split('|')
         source_path = image_path + "img_" + no + ".jpg"
@@ -76,8 +78,7 @@ with open("D:\\Documents\\Thesis\\" + target_device + "\\data_set_2\\coord3.txt"
         warped = four_point_transform(image, rec1)
         newx, newy = (warped.shape[0] * 800) / warped.shape[0], (warped.shape[1] * 600) / warped.shape[1]
         warped_resize = cv2.resize(warped, (int(newx), int(newy)))
-        dest_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\trans_img_" + \
-                    no + "_1" + ".jpg"
+        dest_path = image_path + "trans_img_" + no + "_1" + ".jpg"
         cv2.imwrite(dest_path, warped_resize)
 
         rec2 = numpy.array([
@@ -89,8 +90,7 @@ with open("D:\\Documents\\Thesis\\" + target_device + "\\data_set_2\\coord3.txt"
         warped = four_point_transform(image, rec2)
         newx, newy = (warped.shape[0] * 800) / warped.shape[0], (warped.shape[1] * 600) / warped.shape[1]
         warped_resize = cv2.resize(warped, (int(newx), int(newy)))
-        dest_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\trans_img_" + \
-                    no + "_2" + ".jpg"
+        dest_path = image_path + "trans_img_" + no + "_2" + ".jpg"
         cv2.imwrite(dest_path, warped_resize)
 
         rec3 = numpy.array([
@@ -102,8 +102,7 @@ with open("D:\\Documents\\Thesis\\" + target_device + "\\data_set_2\\coord3.txt"
         warped = four_point_transform(image, rec3)
         newx, newy = (warped.shape[0] * 800) / warped.shape[0], (warped.shape[1] * 600) / warped.shape[1]
         warped_resize = cv2.resize(warped, (int(newx), int(newy)))
-        dest_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\trans_img_" + \
-                    no + "_3" + ".jpg"
+        dest_path = image_path + "trans_img_" + no + "_3" + ".jpg"
         cv2.imwrite(dest_path, warped_resize)
 
         rec4 = numpy.array([
@@ -115,8 +114,7 @@ with open("D:\\Documents\\Thesis\\" + target_device + "\\data_set_2\\coord3.txt"
         warped = four_point_transform(image, rec4)
         newx, newy = (warped.shape[0] * 800) / warped.shape[0], (warped.shape[1] * 600) / warped.shape[1]
         warped_resize = cv2.resize(warped, (int(newx), int(newy)))
-        dest_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\trans_img_" + \
-                    no + "_4" + ".jpg"
+        dest_path = image_path + "trans_img_" + no + "_4" + ".jpg"
         cv2.imwrite(dest_path, warped_resize)
 
         print("Finish img_" + no)
