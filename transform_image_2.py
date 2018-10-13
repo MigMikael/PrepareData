@@ -2,8 +2,8 @@ import numpy
 import cv2
 
 
-# target_device = "S8+"
-target_device = "iPadMini4"
+target_device = "S8+"
+# target_device = "iPadMini4"
 # target_device = "MotoC"
 # target_device = "Mi5"
 

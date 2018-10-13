@@ -5,8 +5,9 @@ import math
 
 
 train_path = "D:\\Documents\\Thesis\\data\\MotoC_S8_plus_train_data_5.txt"
-test_path = "D:\\Documents\\Thesis\\data\\MotoC_S8_plus_test_data_5.txt"
-len_data = 1525500
+test_path = "D:\\Documents\\Thesis\\data\\Random\\MotoC_S8_random_test_1.txt"
+# len_data = 1525500
+len_data = 67500
 
 
 def loadTrainData(data_path):
