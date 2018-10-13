@@ -3,15 +3,15 @@ import math
 
 region = 7
 num_img = 10
-# target_device = "S8+"
-target_device = "iPadMini4"
+target_device = "S8+"
+# target_device = "iPadMini4"
 # target_device = "MotoC"
 # target_device = "Mi5"
 
 # data_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\crop\\"
 # data_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\"
 data_path = "D:\\Documents\\Thesis\\" + target_device + "\\random_color\\"
-dest_data_name = "iPad_random_2.txt"
+dest_data_name = "S8_random_3.txt"
 
 
 def draw_rect(img, tl, tr, br, bl):
@@ -83,6 +83,54 @@ def collect_pixel_data2(tiny_crop, pixel_list):
     return pixel_list
 
 
+def collect_pixel_data3(tiny_crop, pixel_list):
+    for k in range(1, 6):  # 1 2 3 4 5
+        for l in range(1, 6):  # 1 2 3 4 5
+            center_x = k
+            center_y = l
+            region_list = []
+            sum_r, sum_g, sum_b = 0, 0, 0
+            for m in range(center_x - 1, center_x + 2):
+                for n in range(center_y - 1, center_y + 2):
+                    r = tiny_crop[m][n][0]
+                    g = tiny_crop[m][n][1]
+                    b = tiny_crop[m][n][2]
+                    sum_r += r
+                    sum_g += g
+                    sum_b += b
+                    region_list.append([r, g, b, 0])
+
+            r_bar = int(round(sum_r / float(9)))
+            g_bar = int(round(sum_g / float(9)))
+            b_bar = int(round(sum_b / float(9)))
+
+            for item in region_list:
+                distance = math.sqrt((r_bar - item[0])**2 + (g_bar - item[1])**2 + (b_bar - item[2])**2)
+                item[3] = distance
+
+            region_list.sort(key=takeLast)
+            region_list = region_list[0:1]
+            pixel_list.append([region_list[0][0], region_list[0][1], region_list[0][2]])
+
+    return pixel_list
+
+
+def collect_pixel_data4(tiny_crop, pixel_list):
+    r, g, b = 0, 0, 0
+    for k in range(tiny_crop.shape[0]):
+        for l in range(tiny_crop.shape[1]):
+            r += tiny_crop[k][l][0]
+            g += tiny_crop[k][l][1]
+            b += tiny_crop[k][l][2]
+
+    r = int(round(r / float(49)))
+    g = int(round(g / float(49)))
+    b = int(round(b / float(49)))
+    pixel_list.append([r, g, b])
+
+    return pixel_list
+
+
 def plot_coordinate(img, edit_image, region):
     pixel_list = []
     centerX = 10
@@ -143,7 +191,7 @@ def plot_coordinate(img, edit_image, region):
             #pixel_list = collect_pixel_data2(sq2_crop, pixel_list)
             #pixel_list = collect_pixel_data2(sq3_crop, pixel_list)
             #pixel_list = collect_pixel_data2(sq4_crop, pixel_list)
-            pixel_list = collect_pixel_data2(sq5_crop, pixel_list)
+            pixel_list = collect_pixel_data4(sq5_crop, pixel_list)
             #pixel_list = collect_pixel_data2(sq6_crop, pixel_list)
             #pixel_list = collect_pixel_data2(sq7_crop, pixel_list)
             #pixel_list = collect_pixel_data2(sq8_crop, pixel_list)

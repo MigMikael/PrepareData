@@ -4,10 +4,11 @@ import numpy
 import math
 
 
-train_path = "D:\\Documents\\Thesis\\data\\MotoC_S8_plus_train_data_5.txt"
-test_path = "D:\\Documents\\Thesis\\data\\Random\\MotoC_S8_random_test_1.txt"
+train_path = "D:\\Documents\\Thesis\\data\\S8_iPad_plus_train_data_5.txt"
+test_path = "D:\\Documents\\Thesis\\data\\Random\\S8_iPad_random_test_3.txt"
 # len_data = 1525500
-len_data = 67500
+# len_data = 67500
+len_data = 11200
 
 
 def loadTrainData(data_path):
@@ -57,6 +58,8 @@ predict_ = numpy.delete(predict_, (0), axis=1)
 predicted = clf.predict(predict_)
 predicted = [[int(round(x[0])), int(round(x[1])), int(round(x[2]))] for x in predicted]
 
+print(predict[:5])
+print(predicted[:5])
 print(ground_truth[:5])
 
 sum_D_label_linear = 0
