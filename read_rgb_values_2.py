@@ -3,15 +3,16 @@ import math
 
 region = 7
 num_img = 10
-target_device = "S8+"
-# target_device = "iPadMini4"
+
+# target_device = "S8+"
+target_device = "iPadMini4"
 # target_device = "MotoC"
 # target_device = "Mi5"
 
 # data_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\crop\\"
 # data_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\"
-data_path = "D:\\Documents\\Thesis\\" + target_device + "\\random_color\\"
-dest_data_name = "S8_random_3.txt"
+data_path = "D:\\Documents\\Thesis\\" + target_device + "\\random_color_2\\"
+dest_data_name = "iPad_random_6.txt"
 
 
 def draw_rect(img, tl, tr, br, bl):
@@ -191,7 +192,7 @@ def plot_coordinate(img, edit_image, region):
             #pixel_list = collect_pixel_data2(sq2_crop, pixel_list)
             #pixel_list = collect_pixel_data2(sq3_crop, pixel_list)
             #pixel_list = collect_pixel_data2(sq4_crop, pixel_list)
-            pixel_list = collect_pixel_data4(sq5_crop, pixel_list)
+            pixel_list = collect_pixel_data2(sq5_crop, pixel_list)
             #pixel_list = collect_pixel_data2(sq6_crop, pixel_list)
             #pixel_list = collect_pixel_data2(sq7_crop, pixel_list)
             #pixel_list = collect_pixel_data2(sq8_crop, pixel_list)

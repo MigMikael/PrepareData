@@ -8,7 +8,7 @@ target_device = "S8+"
 # target_device = "Mi5"
 
 # image_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_2\\"
-image_path = "D:\\Documents\\Thesis\\" + target_device + "\\random_color\\"
+image_path = "D:\\Documents\\Thesis\\" + target_device + "\\random_color_2\\"
 
 
 def order_points(pts):

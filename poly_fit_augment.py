@@ -4,11 +4,12 @@ import numpy
 import math
 
 
-train_path = "D:\\Documents\\Thesis\\data\\S8_iPad_plus_train_data_5.txt"
-test_path = "D:\\Documents\\Thesis\\data\\Random\\S8_iPad_random_test_3.txt"
+train_path = "D:\\Documents\\Thesis\\data\\MotoC_iPad_plus_train_data_5.txt"
+test_path = "D:\\Documents\\Thesis\\data\\Random\\MotoC_iPad_random_test_5.txt"
 # len_data = 1525500
 # len_data = 67500
-len_data = 11200
+# len_data = 11200
+len_data = 548800
 
 
 def loadTrainData(data_path):

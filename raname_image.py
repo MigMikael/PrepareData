@@ -9,7 +9,7 @@ target_device = "S8+"
 # target_device = "Mi5"
 
 # image_folder = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_2"
-image_folder = "D:\\Documents\\Thesis\\" + target_device + "\\random_color\\"
+image_folder = "D:\\Documents\\Thesis\\" + target_device + "\\random_color_2\\"
 
 count = 1
 for filename in os.listdir(image_folder):
