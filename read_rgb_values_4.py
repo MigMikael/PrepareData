@@ -11,7 +11,9 @@ target_device = "S8+"
 
 data_path = "D:\\Documents\\Thesis\\" + target_device + "\\additional_img\\crop_img\\"
 coord_path = data_path + "coord.txt"
-dest_file_name = "data.txt"
+
+dest_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\"
+dest_file_name = "data_centroid_3.txt"
 
 
 def greetings():
@@ -213,7 +215,7 @@ with open(coord_path, 'r')as data_file:
 
         write_image(data_path + img_name + "_plot.jpg", edit_image)
 
-        write_file(data_path + dest_file_name, device_pixel_list)
+        write_file(dest_path + dest_file_name, device_pixel_list)
 
         print("Finish Image", no)
 
