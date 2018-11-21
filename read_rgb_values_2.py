@@ -2,7 +2,7 @@ import cv2
 import math
 
 region = 7
-num_img = 30
+num_img = 10
 
 target_device = "S8+"
 # target_device = "iPadMini4"
@@ -10,9 +10,9 @@ target_device = "S8+"
 # target_device = "Mi5"
 
 # data_path = "C:\\Users\\Mig\\Documents\\Thesis\\" + target_device + "\\data_set_2\\crop\\"
-data_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\"
-# data_path = "D:\\Documents\\Thesis\\" + target_device + "\\random_color_2\\"
-dest_data_name = "data_centroid_3.txt"
+# data_path = "D:\\Documents\\Thesis\\" + target_device + "\\data_set_3\\"
+data_path = "D:\\Documents\\Thesis\\" + target_device + "\\random_color_2\\"
+dest_data_name = "S8_random.txt"
 
 
 def draw_rect(img, tl, tr, br, bl):
@@ -168,35 +168,35 @@ def plot_coordinate(img, edit_image, region):
             index_sq8_x, index_sq8_y = indexX + 9, indexY + 18
             index_sq9_x, index_sq9_y = indexX + 18, indexY + 18
 
-            edit_image = draw_rect(edit_image, index_sq1_x, index_sq1_y, index_sq1_x + region, index_sq1_y + region)
-            edit_image = draw_rect(edit_image, index_sq2_x, index_sq2_y, index_sq2_x + region, index_sq2_y + region)
-            edit_image = draw_rect(edit_image, index_sq3_x, index_sq3_y, index_sq3_x + region, index_sq3_y + region)
-            edit_image = draw_rect(edit_image, index_sq4_x, index_sq4_y, index_sq4_x + region, index_sq4_y + region)
+            #edit_image = draw_rect(edit_image, index_sq1_x, index_sq1_y, index_sq1_x + region, index_sq1_y + region)
+            #edit_image = draw_rect(edit_image, index_sq2_x, index_sq2_y, index_sq2_x + region, index_sq2_y + region)
+            #edit_image = draw_rect(edit_image, index_sq3_x, index_sq3_y, index_sq3_x + region, index_sq3_y + region)
+            #edit_image = draw_rect(edit_image, index_sq4_x, index_sq4_y, index_sq4_x + region, index_sq4_y + region)
             edit_image = draw_rect(edit_image, index_sq5_x, index_sq5_y, index_sq5_x + region, index_sq5_y + region)
-            edit_image = draw_rect(edit_image, index_sq6_x, index_sq6_y, index_sq6_x + region, index_sq6_y + region)
-            edit_image = draw_rect(edit_image, index_sq7_x, index_sq7_y, index_sq7_x + region, index_sq7_y + region)
-            edit_image = draw_rect(edit_image, index_sq8_x, index_sq8_y, index_sq8_x + region, index_sq8_y + region)
-            edit_image = draw_rect(edit_image, index_sq9_x, index_sq9_y, index_sq9_x + region, index_sq9_y + region)
+            #edit_image = draw_rect(edit_image, index_sq6_x, index_sq6_y, index_sq6_x + region, index_sq6_y + region)
+            #edit_image = draw_rect(edit_image, index_sq7_x, index_sq7_y, index_sq7_x + region, index_sq7_y + region)
+            #edit_image = draw_rect(edit_image, index_sq8_x, index_sq8_y, index_sq8_x + region, index_sq8_y + region)
+            #edit_image = draw_rect(edit_image, index_sq9_x, index_sq9_y, index_sq9_x + region, index_sq9_y + region)
 
-            sq1_crop = crop_img(img, index_sq1_y, index_sq1_y + region, index_sq1_x, index_sq1_x + region)
-            sq2_crop = crop_img(img, index_sq2_y, index_sq2_y + region, index_sq2_x, index_sq2_x + region)
-            sq3_crop = crop_img(img, index_sq3_y, index_sq3_y + region, index_sq3_x, index_sq3_x + region)
-            sq4_crop = crop_img(img, index_sq4_y, index_sq4_y + region, index_sq4_x, index_sq4_x + region)
+            #sq1_crop = crop_img(img, index_sq1_y, index_sq1_y + region, index_sq1_x, index_sq1_x + region)
+            #sq2_crop = crop_img(img, index_sq2_y, index_sq2_y + region, index_sq2_x, index_sq2_x + region)
+            #sq3_crop = crop_img(img, index_sq3_y, index_sq3_y + region, index_sq3_x, index_sq3_x + region)
+            #sq4_crop = crop_img(img, index_sq4_y, index_sq4_y + region, index_sq4_x, index_sq4_x + region)
             sq5_crop = crop_img(img, index_sq5_y, index_sq5_y + region, index_sq5_x, index_sq5_x + region)
-            sq6_crop = crop_img(img, index_sq6_y, index_sq6_y + region, index_sq6_x, index_sq6_x + region)
-            sq7_crop = crop_img(img, index_sq7_y, index_sq7_y + region, index_sq7_x, index_sq7_x + region)
-            sq8_crop = crop_img(img, index_sq8_y, index_sq8_y + region, index_sq8_x, index_sq8_x + region)
-            sq9_crop = crop_img(img, index_sq9_y, index_sq9_y + region, index_sq9_x, index_sq9_x + region)
+            #sq6_crop = crop_img(img, index_sq6_y, index_sq6_y + region, index_sq6_x, index_sq6_x + region)
+            #sq7_crop = crop_img(img, index_sq7_y, index_sq7_y + region, index_sq7_x, index_sq7_x + region)
+            #sq8_crop = crop_img(img, index_sq8_y, index_sq8_y + region, index_sq8_x, index_sq8_x + region)
+            #sq9_crop = crop_img(img, index_sq9_y, index_sq9_y + region, index_sq9_x, index_sq9_x + region)
 
-            pixel_list = collect_pixel_data2(sq1_crop, pixel_list)
-            pixel_list = collect_pixel_data2(sq2_crop, pixel_list)
-            pixel_list = collect_pixel_data2(sq3_crop, pixel_list)
-            pixel_list = collect_pixel_data2(sq4_crop, pixel_list)
+            #pixel_list = collect_pixel_data2(sq1_crop, pixel_list)
+            #pixel_list = collect_pixel_data2(sq2_crop, pixel_list)
+            #pixel_list = collect_pixel_data2(sq3_crop, pixel_list)
+            #pixel_list = collect_pixel_data2(sq4_crop, pixel_list)
             pixel_list = collect_pixel_data2(sq5_crop, pixel_list)
-            pixel_list = collect_pixel_data2(sq6_crop, pixel_list)
-            pixel_list = collect_pixel_data2(sq7_crop, pixel_list)
-            pixel_list = collect_pixel_data2(sq8_crop, pixel_list)
-            pixel_list = collect_pixel_data2(sq9_crop, pixel_list)
+            #pixel_list = collect_pixel_data2(sq6_crop, pixel_list)
+            #pixel_list = collect_pixel_data2(sq7_crop, pixel_list)
+            #pixel_list = collect_pixel_data2(sq8_crop, pixel_list)
+            #pixel_list = collect_pixel_data2(sq9_crop, pixel_list)
 
     return pixel_list, edit_image
 

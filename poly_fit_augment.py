@@ -4,15 +4,20 @@ import numpy
 import math
 
 
-train_path = "D:\\Documents\\Thesis\\data\\S8_iPad_plus_train_data_5.txt"
-# test_path = "D:\\Documents\\Thesis\\data\\MotoC_iPad_plus_test_data_5.txt"
-test_path = "D:\\Documents\\Thesis\\data\\Random\\S8_iPad_random_test_4.txt"
+train_path = "D:\\Documents\\Thesis\\data_2\\MotoC_iPad_plus_train_data_7.txt"
+# test_path = "D:\\Documents\\Thesis\\data_2\\MotoC_iPad_plus_test_data_7.txt"
+# test_path = "D:\\Documents\\Thesis\\data_random\\S8_MotoC_random.txt"
 # len_data = 1525500
 # len_data = 67500
-len_data = 11200
+# len_data = 11200
 # len_data = 548800
 # len_data = 280000
-
+len_data = 1554447
+# len_data = 1535200
+# len_data = 1549765
+# len_data = 1558848
+# len_data = 1552176
+# len_data = 1546073
 
 def loadTrainData(data_path):
     input_X = []
@@ -20,7 +25,7 @@ def loadTrainData(data_path):
     with open(data_path, "r") as data_file:
         for line in data_file:
             label, feature = line.split("|features ")
-            label = label.replace("|labels ", "")
+            label = label.replace("|label ", "")
 
             f_r, f_g, f_b = feature.split(" ")
             input_X.append([int(f_r), int(f_g), int(f_b)])
@@ -36,7 +41,7 @@ def loadTestData(test_path):
     with open(test_path, "r") as test_file:
         for line in test_file:
             label, feature = line.split("|features ")
-            label = label.replace("|labels ", "")
+            label = label.replace("|label ", "")
 
             f_r, f_g, f_b = feature.split(" ")
             predict.append([int(f_r), int(f_g), int(f_b)])

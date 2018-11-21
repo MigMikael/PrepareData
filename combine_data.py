@@ -2,12 +2,12 @@
 
 label_device = "S8+"
 feature_device = "MotoC"
-folder_name = "data_2"
+folder_name = "data_random"
 
 base_path = "D:\\Documents\\Thesis\\"
-label_data = base_path + label_device + "\\data_set_3\\data_centroid_3.txt"
-feature_data = base_path + feature_device + "\\data_set_3\\data_centroid_3.txt"
-output_data = base_path + "\\" + folder_name + "\\S8_MotoC_plus_data_7.txt"
+label_data = base_path + label_device + "\\random_color_2\\S8_random.txt"
+feature_data = base_path + feature_device + "\\random_color_2\\MotoC_random.txt"
+output_data = base_path + "\\" + folder_name + "\\S8_MotoC_random.txt"
 
 label_file = open(label_data, "r")
 feature_file = open(feature_data, "r")
@@ -30,7 +30,7 @@ with open(output_data, "w") as outfile:
         label_temp = label_RGB_list[i].replace("\n", "")
         feature_temp = feature_RGB_list[i].replace("\n", "")
 
-        line = "|labels " + label_temp + " |features " + feature_temp + "\n"
+        line = "|label " + label_temp + " |features " + feature_temp + "\n"
         outfile.write(line)
 
 label_file.close()
